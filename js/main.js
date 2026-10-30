@@ -91,7 +91,7 @@
     f.setAttribute("sandbox", "allow-scripts allow-same-origin");
     if (!interactive) f.style.pointerEvents = "none";
     box.appendChild(f);
-    const fit = () => { f.style.transform = `scale(${box.clientWidth / 1280})`; };
+    const fit = () => { const k = box.clientWidth / 1280; f.style.transform = `scale(${k})`; f.style.height = (box.clientHeight / k) + "px"; };
     new ResizeObserver(fit).observe(box); fit();
   };
 
